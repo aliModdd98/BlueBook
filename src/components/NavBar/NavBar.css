@@ -1,0 +1,105 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Container for navbar items */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: orangered;
+  white-space: nowrap;
+}
+
+/* Links container styling */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Individual icon styling */
+.navbar-icon {
+  color: #6b7280;
+  font-size: 24px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Change icon color on hover */
+.navbar-icon:hover {
+  color: orangered;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-130%);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .navbar-links.open {
+    transform: translateY(0);
+  }
+
+  .navbar-logo {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .navbar-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: orangered;
+    cursor: pointer;
+    z-index: 1001;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-menu-button {
+    display: none;
+  }
+}

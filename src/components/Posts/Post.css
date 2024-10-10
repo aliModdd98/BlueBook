@@ -1,0 +1,134 @@
+.post {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.post:hover .post-image {
+  transform: scale(1.05);
+}
+
+.post-content {
+  flex-grow: 1;
+}
+
+.post-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.post-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.post-details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.post-more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.more-icon {
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.more-icon:hover {
+  color: orangered;
+  transform: rotate(90deg);
+}
+
+.options {
+  position: absolute;
+  top: 30px;
+  width: 150px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.option-button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.option-button:hover {
+  background: #f1f1f1;
+}
+
+.option-text {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .post {
+    flex-direction: column; /* Change to column direction */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .post-image {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add bottom margin */
+    width: 100px; /* Adjust width if needed */
+    height: 100px; /* Adjust height if needed */
+  }
+
+  .post-more {
+    top: 10px;
+    right: 10px;
+  }
+}
